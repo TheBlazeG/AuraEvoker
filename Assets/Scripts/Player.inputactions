@@ -6,9 +6,36 @@
             "id": "cff368c7-a4e7-43eb-8228-3da1ed32aa37",
             "actions": [
                 {
-                    "name": "AuraFarm",
+                    "name": "AuraFarmW",
                     "type": "Button",
                     "id": "f599d04f-5ea3-4d95-b7d0-bc6b4c49e914",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AuraFarmA",
+                    "type": "Button",
+                    "id": "e4effc95-3451-4ebc-bfd0-3d6990f37c5b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AuraFarmS",
+                    "type": "Button",
+                    "id": "ac5cf362-bcb9-4db0-9fea-c68454e4b488",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AuraFarmD",
+                    "type": "Button",
+                    "id": "c9ab0abb-4910-4ce1-a800-b8cd76405d1b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -23,40 +50,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AuraFarm",
+                    "action": "AuraFarmW",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "93163e91-4476-4f89-afcd-9404c18ea5ca",
+                    "id": "81fbf264-e1ff-4751-9a58-a33c1b0dce81",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AuraFarm",
+                    "action": "AuraFarmA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6374393c-e70d-426f-a84d-30a4539695ca",
+                    "id": "48b9bfb8-e622-41a8-b0a2-553c859113e5",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AuraFarm",
+                    "action": "AuraFarmS",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c85ea04d-f51b-4390-baec-bf41469cf3b4",
+                    "id": "17ecd2c1-2aa9-4055-af8b-dda6409c31e5",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AuraFarm",
+                    "action": "AuraFarmD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
