@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,13 +9,14 @@ public class Farmer : MonoBehaviour
 {
     [SerializeField] Sprite[] poses;
     [SerializeField] Image farmer;
+    [SerializeField] TextMeshProUGUI auraScouter;
+    [SerializeField]Slider comboCounter;
+    [SerializeField]TextMeshProUGUI fameCounter;
     private int aura;
     private int fame;
     private int auraCapacity=1;
-    TextMeshProUGUI auraCounter;
-    TextMeshProUGUI fameMeter;
     float comboMeter = 0;
-    float comboGrace = 0;
+    
 
     public void Farm(InputAction.CallbackContext ctx)
     {
@@ -23,10 +25,19 @@ public class Farmer : MonoBehaviour
         int index = Random.Range(0, poses.Length);
         Debug.Log(index);
         Sprite nextSprite = poses[index];
-        farmer.sprite = nextSprite == farmer.sprite && nextSprite== poses[poses.Length-1] ? poses[Random.Range(0,poses.Length-1)] :nextSprite ;
-            comboMeter+= comboMeter>=40? .2f:1;
-            comboGrace = 3;
-        aura += auraCapacity*(int)(1+comboMeter);
+            if (farmer.sprite = nextSprite)
+            {
+        farmer.sprite =  nextSprite== poses[poses.Length-1] ? poses[Random.Range(0,poses.Length-1)] : poses[Random.Range(0, poses.Length)] ;
+            }
+            else
+            {
+                farmer.sprite = nextSprite;
+            }
+        aura += auraCapacity*(1+ (int)(comboMeter/10)+(fame/100));
+            auraScouter.text= aura.ToString();
+
+            comboMeter+= comboMeter>=40? .1f:.3f;
+            comboCounter.value = comboMeter;
         }
         
     }
@@ -39,14 +50,18 @@ public class Farmer : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (comboGrace>0)
+        if (comboMeter>0)
         {
-            comboGrace -= 1 * Time.fixedDeltaTime;
+            comboMeter-= 1 * Time.fixedDeltaTime;
         }
-        if (comboGrace==0&& comboMeter!=0)
-        {
-            comboMeter = 0;
-        }
+        comboCounter.value = comboMeter;
+        //slider1Fill.color = Color.Lerp(Color.red, Color.green, slider1.value / 100);
+    }
+
+    void upgradeFame(int fameToGet)
+    {
+        fame += fameToGet;
+        fameCounter.text= fame.ToString();
     }
 
 }
