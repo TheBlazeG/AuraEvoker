@@ -14,6 +14,7 @@ public class Farmer : MonoBehaviour
     [SerializeField]TextMeshProUGUI fameCounter;
     private int aura;
     private int fame;
+    public int publicFame {  get { return fame; } }
     private int auraCapacity=1;
     float comboMeter = 0;
     
@@ -58,7 +59,7 @@ public class Farmer : MonoBehaviour
         //slider1Fill.color = Color.Lerp(Color.red, Color.green, slider1.value / 100);
     }
 
-    void upgradeFame(int fameToGet)
+   public void upgradeFame(int fameToGet)
     {
         fame += fameToGet;
         fameCounter.text= fame.ToString();
